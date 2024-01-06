@@ -31,4 +31,4 @@ router.patch('/:id', (req, res) => {
 })
 
 
-modules.exports = router;
+module.exports = router;

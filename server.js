@@ -1,14 +1,15 @@
-// import express
+require('dotenv').config();
+
+// require express
 const express = require('express');
 
 // require user routes in route folder
 const userRoutes = require('./routes/users')
 
-// instantiate the express app
+// instantiate the express app - express app
 const app = express();
 
-// set our port
-const port = 4000;
+
 
 // middleware
 app.use((req, res, next) => {
@@ -16,14 +17,14 @@ app.use((req, res, next) => {
     next()
 });
 
-// routes
-app.use('/api/users', userRoutes)
+// // routes
+// app.use('/api/users', userRoutes)
 
-
+// react to request - set up route handler - routes
 app.get('/', (req, res) => {
-    res.send('server is running');
+    res.json({mssg: 'Welcome to the user app'});
 })
 // listen on port
-app.listen(port, () => {
-    console.log(`listing on port,  ${port}`)
+app.listen(process.env.PORT, () => {
+    console.log('listening on port', process.env.PORT)
 });
