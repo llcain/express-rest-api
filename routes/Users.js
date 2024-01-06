@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
 
 // Post a new user
 router.post('/', (req, res) => {
-    res.json({mssg: 'Post a new new'})
+    res.json({mssg: 'Post a new user'})
 })
 
 // Delete a new user
